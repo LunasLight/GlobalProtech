@@ -13,7 +13,8 @@
         href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
     <link href="./import/aos.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+        type="text/css" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -22,19 +23,35 @@
     <!-- Header -->
     <section>
         <div class="container-fluid">
-            <div class="row d-flex justify-content-between">
-                <div class="col"></div>
-                <div class="col d-flex align-items-center justify-content-center">
-                    <img class="img-fluid w-75" src="./img/LogoTopHeader.png" alt="Global Protech Logo">
+            <div class="row justify-content-between">
+                <div class="col-4"></div>
+                <div class="col-12 col-lg-4 d-none d-lg-flex d-xl-none align-items-center justify-content-center">
+                    <img class="img-fluid w-100 nav-link" data-src="home.html" src="./img/LogoTopHeader.png"
+                        alt="Global Protech Logo">
                 </div>
-                <div class="col d-flex justify-content-end align-items-center">
-                    <div class="mx-2">ติดต่อเรา</div>
-                    <a href="https://www.facebook.com/profile.php?id=100088274152387" target="_blank"><img
-                            style="max-height: 34px" src="./img/facebook.png" alt="Facebook"></a>
-                    <a href="https://lin.ee/XNim4O2" target="_blank"><img style="max-height: 34px" src="./img/line.png"
+                <div class="col-12 col-lg-4 d-flex d-lg-none d-xl-flex align-items-center justify-content-center">
+                    <img class="img-fluid w-75 nav-link" data-src="home.html" src="./img/LogoTopHeader.png"
+                        alt="Global Protech Logo">
+                </div>
+                <div class="col col-lg-4 d-none d-lg-flex d-xl-none justify-content-end align-items-center">
+                    <span class="text-top mx-1">ติดต่อเรา</span>
+                    <a href="https://www.facebook.com/profile.php?id=100088274152387" target="_blank"><img class="icon"
+                            src="./img/facebook.png" alt="Facebook"></a>
+                    <a href="https://lin.ee/XNim4O2" target="_blank"><img class="icon" src="./img/line.png"
+                            alt="LINE"></a>
+                    <span>|</span>
+                    <a class="aheader text-top mx-1" href="tel:0956649196">
+                        โทร.095-664-9196
+                    </a>
+                </div>
+                <div class="col col-lg-4 d-flex d-lg-none d-xl-flex  justify-content-center align-items-center">
+                    <span class="text-top mx-1">ติดต่อเรา</span>
+                    <a href="https://www.facebook.com/profile.php?id=100088274152387" target="_blank"><img class="icon"
+                            src="./img/facebook.png" alt="Facebook"></a>
+                    <a href="https://lin.ee/XNim4O2" target="_blank"><img class="icon" src="./img/line.png"
                             alt="LINE"></a>
                     <span class="mx-2">|</span>
-                    <a class="aheader" href="tel:0956649196" style="display: flex; align-items: center;">
+                    <a class="aheader text-top mx-1" href="tel:0956649196">
                         โทร.095-664-9196
                     </a>
                 </div>
@@ -54,9 +71,9 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto">
+                        <ul class="navbar-nav mx-auto text-center">
                             <li class="nav-item mx-3">
-                                <a class="nav-link active" data-src="home.html">หน้าแรก</a>
+                                <a class="nav-link" data-src="home.html">หน้าแรก</a>
                             </li>
                             <li class="nav-item mx-3">
                                 <a class="nav-link" data-src="knowus.html">รู้จักโกลบอลโพรเทค</a>
@@ -67,10 +84,14 @@
                                     บริการของเรา
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item" data-src="service1.html">งานประเภทรับกำจัดกากอุตสาหกรรม</a></li>
-                                    <li><a class="dropdown-item" data-src="service2.html">งานประเภทรถขนส่ง</a></li>
-                                    <li><a class="dropdown-item" data-src="service3.html">งานทำความสะอาด Clenning</a></li>
-                                    <li><a class="dropdown-item" data-src="service4.html">งานประเภทภาชนะ Support</a></li>
+                                    <li><a class="dropdown-item"
+                                            data-src="service1.html">งานประเภทรับกำจัดกากอุตสาหกรรม</a></li>
+                                    <li><a class="dropdown-item"
+                                            data-src="service2.html">งานประเภทรถขนส่งกากอุตสาหกรรม</a></li>
+                                    <li><a class="dropdown-item" data-src="service3.html">งานทำความสะอาดบ่อบำบัด</a>
+                                    </li>
+                                    <li><a class="dropdown-item" data-src="service4.html">งานประเภทภาชนะบรรจุของเสีย</a>
+                                    </li>
                                     <li><a class="dropdown-item" data-src="service5.html">งานรับซื้อกากของเสีย</a></li>
                                 </ul>
                             </li>
@@ -78,8 +99,7 @@
                                 <a class="nav-link" data-src="article1.html">บทความและข่าวสาร</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link" href="https://www.stglobalgreen.com/"
-                                   target="_blank">โรงงานผลิตปุ๋ย</a>
+                                <a class="nav-link" data-src="produce.html">โรงงานผลิตปุ๋ย</a>
                             </li>
                         </ul>
                     </div>
@@ -87,24 +107,24 @@
             </nav>
         </header>
     </div>
-    
+
     <div id="content"></div>
 
     <!-- Footer -->
     <div class="pt-3" style="background-color: #0f9ed269;">
         <footer class="text-white"
             style="background: rgb(75,164,147);background: linear-gradient(131deg, rgba(75,164,147,1) 0%, rgba(75,164,147,1) 6%, rgba(15,159,210,1) 34%);">
-            <div class="container py-4">
+            <div class="container">
                 <div class="row">
-                    <div class="col-6">
-                        <div class="fs-3">บริษัท โกลบอลโพรเทคเท็ค จำกัด</div>
+                    <div class="col-12 col-lg-6 my-3">
+                        <div class="fs-3">บริษัท โกลบอลโพรเท็ค จำกัด</div>
                         <p>88/46 หมู่ 11 ซ.กิ่งแก้ว 37 ถ.กิ่งแก้ว ต.ราชาเทวะ อ.บางพลี สมุทรปราการ 10540 ประเทศไทย</p>
                         <a class="afooter" href="tel:0956649196" style="display: flex; align-items: center;">
                             <img style="height: 25px; margin-right: 8px;" src="./img/smartphone.png" alt="">
                             095-664-9196
                         </a>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-lg-3 my-3">
                         <ul>
                             <li><a data-src="home.html" class="footer-link">หน้าแรก</a></li>
                             <li><a data-src="knowus.html" class="footer-link">รู้จักโกลบอลโพรเทค</a></li>
@@ -112,23 +132,25 @@
                             <li><a href="#" class="footer-link">ร่วมงานกับเรา</a></li>
                         </ul>
                     </div>
-                    <div class="col-3">
+                    <div class="col-12 col-lg-3 my-3">
                         <div>นโยบายคุ้มครองข้อมูลส่วนบุคคล</div>
                         <div>นโยบายการใช้คุกกี้</div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 d-flex align-items-center">
+                    <div class="col-12 col-lg-6 d-flex align-items-center">
                         <div>Follow us: </div>
                         <a href="https://www.facebook.com/profile.php?id=100088274152387" target="_blank"><img
-                                style="max-height: 34px" src="./img/facebook.png" alt="Facebook"></a>
-                        <a href="https://lin.ee/XNim4O2" target="_blank"><img style="max-height: 34px"
-                                src="./img/line.png" alt="LINE"></a>
+                                class="icon" src="./img/facebook.png" alt="Facebook"></a>
+                        <a href="https://lin.ee/XNim4O2" target="_blank"><img class="icon" src="./img/line.png"
+                                alt="LINE"></a>
                     </div>
-                    <div class="col-6 d-flex justify-content-center">
+                    <div class="col-12 col-lg-6 d-flex justify-content-center my-2">
                         <a data-src="contact.html"
                             class="btn btn-light btnfooter rounded-pill mx-2 footer-link">ติดต่อเรา</a>
-                        <a href="#" class="btn btn-light btnfooter rounded-pill mx-2 footer-link"><i class="fa fa-search"></i>ติดตามข่าวสาร</a>
+                        <a href="https://www.facebook.com/profile.php?id=100088274152387" target="_blank"
+                            class="btn btn-light btnfooter rounded-pill mx-2 footer-link"><i class="fa fa-search"></i>
+                            ติดตามข่าวสาร</a>
                     </div>
                 </div>
                 <div class="text-center mt-2">

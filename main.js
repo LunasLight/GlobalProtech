@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const initialPage = sessionStorage.getItem('currentPage') || './home.html';
+    var initialPage = sessionStorage.getItem('currentPage') || './home.html';
     loadPage(initialPage);
+    setActiveLinks();
 
     document.addEventListener('click', function (e) {
         const link = e.target.closest('.nav-link, .dropdown-item, .footer-link, .tohref');
@@ -9,8 +10,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (src) {
                 sessionStorage.setItem('currentPage', src);
-                setActiveLinks(src);
+                initialPage = sessionStorage.getItem('currentPage');
+                setActiveLinks();
                 loadPage(src);
+                location.reload();
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -18,7 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-
     function loadPage(url) {
         const loader = document.getElementById("preloader");
         loader.style.display = "block";
@@ -39,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             resolve();
                         } else {
                             img.onload = resolve;
-                            img.onerror = resolve; 
+                            img.onerror = resolve;
                         }
                     });
                 });
@@ -58,7 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const body = document.body;
         const backgrounds = {
             'home.html': './img/Background.png',
-            'knowus.html': './img/global2.png',
+            // 'knowus.html': './img/global2.png',
             'service': './img/Background2.png'
         };
         if (backgrounds[url]) {
@@ -72,12 +74,12 @@ document.addEventListener('DOMContentLoaded', function () {
         body.style.backgroundRepeat = "no-repeat";
     }
 
-    function setActiveLinks(activeSrc) {
+    function setActiveLinks() {
         document.querySelectorAll('.nav-link, .dropdown-item, .footer-link').forEach(item => {
             item.classList.remove('active');
         });
-
-        document.querySelectorAll(`[data-src="${activeSrc}"]`).forEach(item => {
+        console.log(initialPage);
+        document.querySelectorAll(`[data-src="${initialPage}"]`).forEach(item => {
             item.classList.add('active');
             if (item.classList.contains('dropdown-item')) {
                 const dropdownToggle = item.closest('.dropdown').querySelector('.dropdown-toggle');

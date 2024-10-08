@@ -1,6 +1,6 @@
 #preloader {
     background: #fff url(./img/preloader.gif) no-repeat center center;
-    height:  100vh;
+    height: 100vh;
     width: 100%;
     position: fixed;
     z-index: 100;
@@ -18,24 +18,44 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    transition: transform 0.3s ease;
 }
 
 a:hover {
     text-decoration: none;
     color: inherit;
+}
+
+.icon {
+    max-height: 34px;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover {
+    max-height: 34px;
     transform: scale(1.1);
+}
+
+.aheader {
+    transition: transform 0.3s ease;
 }
 
 .aheader:hover {
     color: rgba(0, 0, 0, 0.9);
+    transform: scale(1.1);
 }
+
 
 .afooter:hover {
     color: rgba(255, 255, 255, 0.8);
 }
-.tohref{
+
+.tohref {
     cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.tohref:hover {
+    transform: scale(1.1);
 }
 
 ul {
@@ -68,19 +88,20 @@ ul {
     cursor: pointer;
 }
 
-.footer-link.active{
+.footer-link.active {
     font-weight: bold;
+}
+
+.nav-link {
+    cursor: pointer;
 }
 
 .navbar-dark .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.8);
-    transition: transform 0.3s ease;
 }
 
 .navbar-dark .navbar-nav .nav-link:hover {
     color: rgba(255, 255, 255, 0.9);
-    transform: scale(1.1);
-    cursor: pointer;
 }
 
 .dropdown-item:hover {
@@ -98,10 +119,12 @@ ul {
 
 .ablack {
     color: black;
+    transition: transform 0.3s ease;
 }
 
 .ablack:hover {
     color: black;
+    transform: scale(1.1);
 }
 
 .quote-container {
@@ -129,3 +152,25 @@ ul {
     right: -20px;
 }
 
+.globalBackground {
+    background-image: url('./img/global2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+@media screen and (max-width: 992px) {
+    .dropdown-menu {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .text-top{
+        font-size: 14px;
+    }
+    .globalBackground {
+        background-size: 150%;
+        background-position: right;
+    }
+}
