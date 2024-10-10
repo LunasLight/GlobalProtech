@@ -61,12 +61,16 @@ document.addEventListener('DOMContentLoaded', function () {
         const backgrounds = {
             'home.html': './img/Background.png',
             // 'knowus.html': './img/global2.png',
-            'service': './img/Background2.png'
+            'service1.html': './img/Background2.png',
+            'service2.html': './img/Background2.png',
+            'service3.html': './img/Background2.png',
+            'service4.html': './img/Background2.png',
+            'service5.html': './img/Background2.png',
+            'cookie.html': './img/Cookie.png',
+            'environment.html': './img/Cookie.png',
         };
         if (backgrounds[url]) {
             body.style.backgroundImage = `url('${backgrounds[url]}')`;
-        } else if (['service1.html', 'service2.html', 'service3.html', 'service4.html', 'service5.html'].includes(url)) {
-            body.style.backgroundImage = `url('${backgrounds['service']}')`;
         } else {
             body.style.backgroundImage = "none";
         }
@@ -82,9 +86,25 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll(`[data-src="${initialPage}"]`).forEach(item => {
             item.classList.add('active');
             if (item.classList.contains('dropdown-item')) {
-                const dropdownToggle = item.closest('.dropdown').querySelector('.dropdown-toggle');
-                dropdownToggle.classList.add('active');
+                const allServicesToggle = document.querySelectorAll('.services');
+                allServicesToggle.forEach(service => {
+                    service.classList.add('active');
+                });
             }
         });
     }
+});
+document.getElementById('serviceLink').addEventListener('click', function() {
+    const dropdownElement = document.getElementById('navbarDropdownMenuLink');
+    const dropdownMenu = dropdownElement.nextElementSibling;
+    const isOpen = dropdownMenu.classList.contains('show');
+
+    dropdownMenu.classList.toggle('show', !isOpen);
+    dropdownElement.classList.toggle('show', !isOpen);
+    dropdownElement.setAttribute('aria-expanded', !isOpen);
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });

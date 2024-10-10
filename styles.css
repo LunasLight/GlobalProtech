@@ -63,6 +63,17 @@ ul {
     padding: 0;
     margin: 0;
 }
+ol {
+    list-style: none;
+    counter-reset: item;
+}
+ol li {
+    counter-increment: item;
+}
+ol li:before {
+    content: counters(item, ".") ". ";
+    /* font-weight: bold; */
+}
 
 .custom-list {
     list-style-type: none;
