@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     loadPage(initialPage);
     setActiveLinks();
-    
+
     window.history.replaceState({ page: initialPage }, '', '');
 
     document.addEventListener('click', function (e) {
@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 setActiveLinks();
                 loadPage(src);
                 window.history.pushState({ page: src }, '', '');
-                forwardStack.length = 0; 
+                forwardStack.length = 0;
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function setActiveLinks() {
-        document.querySelectorAll('.nav-link, .dropdown-item, .footer-link').forEach(item => {
+        document.querySelectorAll('.nav-link, .dropdown-item, .footer-link,.articles').forEach(item => {
             item.classList.remove('active');
         });
         document.querySelectorAll(`[data-src="${initialPage}"]`).forEach(item => {
@@ -113,8 +113,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 });
             }
         });
+        if (['article1.html', 'article2.html', 'article3.html', 'article4.html', 'article5.html'].includes(initialPage)) {
+            const allArticles = document.querySelectorAll('.articles');
+            allArticles.forEach(article => {
+                article.classList.add('active');
+            });
+        }
     }
-
     document.getElementById('serviceLink').addEventListener('click', function () {
         const dropdownElement = document.getElementById('navbarDropdownMenuLink');
         const dropdownMenu = dropdownElement.nextElementSibling;
