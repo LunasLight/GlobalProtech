@@ -188,6 +188,11 @@ ol li:before {
     background-repeat: no-repeat;
     background-position: center;
 }
+.backgroundCover {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 @media screen and (max-width: 992px) {
     .dropdown-menu {
