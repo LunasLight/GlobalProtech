@@ -14,6 +14,14 @@ body {
     padding: 0;
     color: #333;
 }
+.bodyBackground1{
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+.bodyBackground2{
+    background-size: 100% auto;
+    background-repeat: repeat;
+}
 
 a {
     text-decoration: none;
@@ -169,13 +177,43 @@ ol li:before {
     background-repeat: no-repeat;
     background-position: top right;
 }
+.globalBackground2 {
+    background-image: url('./img/Background3.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+.backgroundCenter {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
 
 @media screen and (max-width: 992px) {
     .dropdown-menu {
         text-align: center;
     }
+    .bodyBackground1{
+        background-size: auto 39%;
+        background-position-x: center;
+        object-fit: cover;
+    }
 }
-
+@media screen and (max-width: 768px) {
+    .bodyBackground1{
+        background-size: auto 36%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .bodyBackground1{
+        background-size: auto 32%;
+    }
+}
+@media screen and (max-width: 425px) {
+    .bodyBackground1{
+        background-size: auto 28%;
+    }
+}
 @media screen and (max-width: 390px) {
     .text-top{
         font-size: 14px;
@@ -183,5 +221,8 @@ ol li:before {
     .globalBackground {
         background-size: 150%;
         background-position: right;
+    }
+    .bodyBackground1{
+        background-size: auto 22%;
     }
 }

@@ -1,12 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     var initialPage = sessionStorage.getItem('currentPage') || './home.html';
-    const historyStack = JSON.parse(sessionStorage.getItem('historyStack')) || [];
-    const forwardStack = []; // สแต็กสำหรับการเดินหน้า
-
     loadPage(initialPage);
     setActiveLinks();
-    
-    window.history.replaceState({ page: initialPage }, '', '');
 
     document.addEventListener('click', function (e) {
         const link = e.target.closest('.nav-link, .dropdown-item, .footer-link, .tohref');
@@ -14,14 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
             const src = link.dataset.src;
 
             if (src) {
-                historyStack.push(initialPage);
-                sessionStorage.setItem('historyStack', JSON.stringify(historyStack));
                 sessionStorage.setItem('currentPage', src);
                 initialPage = sessionStorage.getItem('currentPage');
                 setActiveLinks();
                 loadPage(src);
-                window.history.pushState({ page: src }, '', '');
-                forwardStack.length = 0; 
+                location.reload();
                 window.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -29,26 +21,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
     });
-
-    window.onpopstate = function (event) {
-        if (event.state) {
-            const currentPage = event.state.page;
-
-            if (historyStack.length > 0) {
-                forwardStack.push(sessionStorage.getItem('currentPage'));
-                sessionStorage.setItem('currentPage', currentPage);
-                loadPage(currentPage);
-                location.reload();
-            }
-
-            if (historyStack.length === 0) {
-                sessionStorage.setItem('currentPage', './home.html');
-                loadPage('./home.html');
-                location.reload();
-            }
-        }
-    };
-
     function loadPage(url) {
         const loader = document.getElementById("preloader");
         loader.style.display = "block";
@@ -63,14 +35,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 document.getElementById('content').innerHTML = data;
                 updateBackground(url);
                 const images = document.querySelectorAll('#content img');
-                const imageLoadPromises = Array.from(images).map(img => new Promise(resolve => {
-                    if (img.complete) {
-                        resolve();
-                    } else {
-                        img.onload = resolve;
-                        img.onerror = resolve;
-                    }
-                }));
+                const imageLoadPromises = Array.from(images).map(img => {
+                    return new Promise((resolve) => {
+                        if (img.complete) {
+                            resolve();
+                        } else {
+                            img.onload = resolve;
+                            img.onerror = resolve;
+                        }
+                    });
+                });
                 return Promise.all(imageLoadPromises);
             })
             .then(() => {
@@ -78,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 AOS.init();
             })
             .catch(error => {
-                document.getElementById('content').innerHTML = '<p>เกิดข้อผิดพลาด: ' + error.message + '</p>';
+                document.getElementById('content').innerHTML = '<p>เกิดข้อผิดพลาด: ' + error.message + '</p>'; // แสดงข้อความผิดพลาด
             });
     }
 
@@ -104,6 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.nav-link, .dropdown-item, .footer-link').forEach(item => {
             item.classList.remove('active');
         });
+        console.log(initialPage);
         document.querySelectorAll(`[data-src="${initialPage}"]`).forEach(item => {
             item.classList.add('active');
             if (item.classList.contains('dropdown-item')) {
@@ -114,19 +89,18 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+});
+document.getElementById('serviceLink').addEventListener('click', function () {
+    const dropdownElement = document.getElementById('navbarDropdownMenuLink');
+    const dropdownMenu = dropdownElement.nextElementSibling;
+    const isOpen = dropdownMenu.classList.contains('show');
 
-    document.getElementById('serviceLink').addEventListener('click', function () {
-        const dropdownElement = document.getElementById('navbarDropdownMenuLink');
-        const dropdownMenu = dropdownElement.nextElementSibling;
-        const isOpen = dropdownMenu.classList.contains('show');
+    dropdownMenu.classList.toggle('show', !isOpen);
+    dropdownElement.classList.toggle('show', !isOpen);
+    dropdownElement.setAttribute('aria-expanded', !isOpen);
 
-        dropdownMenu.classList.toggle('show', !isOpen);
-        dropdownElement.classList.toggle('show', !isOpen);
-        dropdownElement.setAttribute('aria-expanded', !isOpen);
-
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
 });
