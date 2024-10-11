@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
-    var initialPage = sessionStorage.getItem('currentPage') || './home.html';
+    var initialPage = sessionStorage.getItem('currentPage') || 'home.html';
     const historyStack = JSON.parse(sessionStorage.getItem('historyStack')) || [];
-    const forwardStack = []; // สแต็กสำหรับการเดินหน้า
+    const forwardStack = [];
 
     loadPage(initialPage);
     setActiveLinks();
