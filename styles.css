@@ -179,9 +179,9 @@ ol li:before {
 }
 .globalBackground2 {
     background-image: url('./img/Background3.png');
-    background-size: cover;
+    background-size: 100% auto;
     background-repeat: no-repeat;
-    background-position: bottom center;
+    background-position: 50% 80%;
 }
 .backgroundCenter {
     background-size: contain;
@@ -193,7 +193,12 @@ ol li:before {
     background-repeat: no-repeat;
     background-position: center;
 }
-
+@media screen and (max-width: 1200px) {
+    .globalBackground2 {
+        background-size: auto 120%;
+        background-position: 50% 60%;
+    }
+}
 @media screen and (max-width: 992px) {
     .dropdown-menu {
         text-align: center;
@@ -202,6 +207,9 @@ ol li:before {
         background-size: auto 39%;
         background-position-x: center;
         object-fit: cover;
+    }
+    .globalBackground2 {
+        background-size: auto 120%;
     }
 }
 @media screen and (max-width: 768px) {
