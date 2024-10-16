@@ -21,18 +21,18 @@
 <body>
     <div id="preloader"></div>
     <!-- Header -->
-    <section>
+    <section class="sticky-lg-top" style="transition: background-color 1s;background-color: transparent;" id="top-header">
         <div class="container-fluid">
             <div class="row justify-content-between">
                 <div class="col-lg-4"></div>
                 <div class="col-12 col-lg-4 row justify-content-center align-items-center">
-                    <div class="col-9 col-lg-12">
+                    <div class="col-9 col-lg-12" style="transition: width 1s;" id="logo-header">
                         <img class="img-fluid w-100 nav-link" data-src="home.html" src="./img/LogoTopHeader.png"
                             alt="Global Protech Logo">
                     </div>
                 </div>
-                <div class="col-12 col-lg-4 row align-items-center">
-                    <div class="text-center text-lg-end">
+                <div class="col-12 col-lg-4 d-none d-lg-flex align-items-center justify-content-end">
+                    <div class="text-center">
                         <span class="text-top">ติดต่อเรา</span>
                         <a href="https://www.facebook.com/profile.php?id=100088274152387" target="_blank"><img class="icon"
                                 src="./img/facebook.png" alt="Facebook"></a>
@@ -46,56 +46,68 @@
                 </div>
             </div>
         </div>
-    </section>
-    <div class="py-2" style="background-color: #0f9ed269;">
-        <header>
-            <nav class="navbar navbar-expand-lg navbar-dark fs-5 fw-bold"
-                style="background: rgb(75,164,147);
-                background: linear-gradient(215deg, rgba(75,164,147,1) 0%, rgba(75,164,147,1) 19%, rgba(15,159,210,1) 37%);">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#"></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
-                        aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                        <ul class="navbar-nav mx-auto text-center">
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" data-src="home.html">หน้าแรก</a>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" data-src="knowus.html">รู้จักโกลบอลโพรเท็ค</a>
-                            </li>
-                            <li class="nav-item dropdown mx-3">
-                                <a class="nav-link dropdown-toggle services" id="navbarDropdownMenuLink" role="button"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    บริการของเรา
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <li><a class="dropdown-item"
-                                            data-src="service1.html">งานประเภทรับกำจัดกากอุตสาหกรรม</a></li>
-                                    <li><a class="dropdown-item"
-                                            data-src="service2.html">งานประเภทรถขนส่งกากอุตสาหกรรม</a></li>
-                                    <li><a class="dropdown-item" data-src="service3.html">งานทำความสะอาดบ่อบำบัด</a>
-                                    </li>
-                                    <li><a class="dropdown-item" data-src="service4.html">งานประเภทภาชนะบรรจุของเสีย</a>
-                                    </li>
-                                    <li><a class="dropdown-item" data-src="service5.html">งานรับซื้อกากของเสีย</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link articles" data-src="article1.html">บทความและข่าวสาร</a>
-                            </li>
-                            <li class="nav-item mx-3">
-                                <a class="nav-link" data-src="produce.html">โรงงานผลิตปุ๋ย</a>
-                            </li>
-                        </ul>
+        <div class="py-2" style="background-color: #0f9ed269;">
+            <header>
+                <nav class="navbar navbar-expand-lg navbar-dark fs-5 fw-bold"
+                    style="background: rgb(75,164,147);
+                    background: linear-gradient(215deg, rgba(75,164,147,1) 0%, rgba(75,164,147,1) 19%, rgba(15,159,210,1) 37%);">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#"></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="navbar-nav mx-auto text-center">
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link" data-src="home.html">หน้าแรก</a>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link" data-src="knowus.html">รู้จักโกลบอลโพรเท็ค</a>
+                                </li>
+                                <li class="nav-item dropdown mx-3">
+                                    <a class="nav-link dropdown-toggle services" id="navbarDropdownMenuLink" role="button"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                        บริการของเรา
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <li><a class="dropdown-item"
+                                                data-src="service1.html">งานประเภทรับกำจัดกากอุตสาหกรรม</a></li>
+                                        <li><a class="dropdown-item"
+                                                data-src="service2.html">งานประเภทรถขนส่งกากอุตสาหกรรม</a></li>
+                                        <li><a class="dropdown-item" data-src="service3.html">งานทำความสะอาดบ่อบำบัด</a>
+                                        </li>
+                                        <li><a class="dropdown-item" data-src="service4.html">งานประเภทภาชนะบรรจุของเสีย</a>
+                                        </li>
+                                        <li><a class="dropdown-item" data-src="service5.html">งานรับซื้อกากของเสีย</a></li>
+                                    </ul>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link articles" data-src="article1.html">บทความและข่าวสาร</a>
+                                </li>
+                                <li class="nav-item mx-3">
+                                    <a class="nav-link" data-src="produce.html">โรงงานผลิตปุ๋ย</a>
+                                </li>
+                                <div class="d-block d-lg-none fw-normal text-center mt-3">
+                                    <span class="text-top">ติดต่อเรา</span>
+                                    <a href="https://www.facebook.com/profile.php?id=100088274152387" target="_blank"><img class="icon"
+                                            src="./img/facebook.png" alt="Facebook"></a>
+                                    <a href="https://lin.ee/XNim4O2" target="_blank"><img class="icon" src="./img/line.png"
+                                            alt="LINE"></a>
+                                    <span>|</span>
+                                    <a class="aheader text-top" href="tel:0956649196">
+                                        โทร.095-664-9196
+                                    </a>
+                                </div>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </nav>
-        </header>
-    </div>
+                </nav>
+            </header>
+        </div>
+    </section>
+ 
 
     <div id="content"></div>
 

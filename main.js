@@ -134,4 +134,26 @@ document.addEventListener('DOMContentLoaded', function () {
             behavior: 'smooth'
         });
     });
+
+    window.addEventListener('scroll', function () {
+        const header = document.getElementById('top-header');
+        const dropdownElement = document.getElementById('navbarNavDropdown');
+        const logoheader = document.getElementById('logo-header');
+        if (window.scrollY > 0) {
+            header.classList.add('bg-white');
+            if (dropdownElement.classList.contains('show')) {
+                dropdownElement.classList.remove('show');
+            }
+            if (logoheader.classList.contains('col-lg-12')) {
+                logoheader.classList.remove('col-lg-12');
+                logoheader.classList.add('col-lg-8');
+            }
+        } else {
+            header.classList.remove('bg-white');
+            if (logoheader.classList.contains('col-lg-8')) {
+                logoheader.classList.remove('col-lg-8');
+                logoheader.classList.add('col-lg-12');
+            }
+        }
+    });
 });
